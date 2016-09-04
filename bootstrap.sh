@@ -6,21 +6,19 @@ echo "=========================================="
 sudo apt-get update
 sudo apt-get upgrade
 
-#install nodjs
-sudo apt-get install -y build-essential
-curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
-sudo apt-get update
-sudo apt-get -y install nodejs
+#install build tools
+sudo apt-get install -y build-essential git
 
-#install mongo db
+
+curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
 echo "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
+
+
+#install mongo db / nodejs
 sudo apt-get update
 sudo apt-get install -y mongodb-org
-sudo apt-get update
-
-#Tools
-sudo apt-get install git
+sudo apt-get -y install nodejs
 
 #install base npm packages
 sudo npm install -g bower
